@@ -24,24 +24,33 @@ It is also shipped with a real time heatmap to map user movement in the room.
 # User Controls
 
 ## General 
-P 			- Screenshot 
+<kbd>P</kbd> - Screenshot 
 
 ## Debug 
-WASD 		- User Movement 
-Left Shift 	- Raise Position
-Left Strg 	- Lower Position
+  <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> : User Movement 
+
+  <kbd>Left Shift</kbd> : Raise Position
+
+  <kbd>Left STRG</kbd>: Lower Position
 
 ## Heatmap 
 
-V - Start/Stop tracking
-B - Lower smoothvalue  
-N - Raise smoothvalue
-M - Hide/Show Heatmap
+   <kbd>V</kbd> - Start/Stop tracking
+
+   <kbd>B</kbd> - Lower smoothvalue  
+
+   <kbd>N</kbd> - Raise smoothvalue
+
+   <kbd>M</kbd> - Hide/Show Heatmap
 
 ## Gaze-mapper
 
-F - Start/Stop tracking
-G - Lower threshold value
-H - Raise threshold value
-J - Hide/show grid
-T - switch view (inverted view)
+   <kbd>F</kbd> - Start/Stop tracking
+
+  <kbd>G</kbd> - Lower threshold value
+
+   <kbd>H</kbd> - Raise threshold value
+
+   <kbd>J</kbd> - Hide/show grid
+
+   <kbd>T</kbd> - switch view (inverted view)
