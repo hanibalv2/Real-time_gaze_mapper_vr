@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -131,7 +132,7 @@ public class EyeFocusPointSphereScript : MonoBehaviour
         {
             var position = _player.position;
             foreach (var VASA in VASAList)
-            {        
+            {
                 VASA.UpdateCollision(id, position, other.ClosestPoint(position));
             }
 

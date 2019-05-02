@@ -609,8 +609,6 @@ MonoBehaviour:
   sphereCastDistance: 10
   VAS: {fileID: 221381948}
   VASAList:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2059929032}
   useAdvancedScript: 1
   layerMask:
