@@ -17,6 +17,10 @@
 # Visual Studio cache directory
 .vs/
 
+# Jetbrain Rider Cache
+.idea/
+Assets/Plugins/Editor/JetBrains*
+
 # Gradle cache directory
 .gradle/
 
@@ -53,9 +57,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
 ###_OWN_IGNORE_FILES_####
 /pupil_v1.7-42-7ce62c8_windows_x64/pupil_capture_windows_x64_v1.7-42-7ce62c8
 /pupil_v1.7-42-7ce62c8_windows_x64/pupil_player_windows_x64_v1.7-42-7ce62c8
 /Assets/Plugins
 /Assets/Plugins.meta
 /Assets/3D_Models/3D_Models_Backup
+
+
