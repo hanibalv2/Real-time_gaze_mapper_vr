@@ -20,3 +20,28 @@ It is also shipped with a real time heatmap to map user movement in the room.
   - Chaser324/Unity Wireframe Shaders (include in this project) [https://github.com/Chaser324/unity-wireframe](https://github.com/Chaser324/unity-wireframe)
   - Pupil-labs/pupil [https://github.com/pupil-labs/pupil (https://github.com/pupil-labs/pupil)
     - Latet releases: [https://github.com/pupil-labs/pupil/releases](https://github.com/pupil-labs/pupil/releases)
+
+# User Controls
+
+## General 
+P 			- Screenshot 
+
+## Debug 
+WASD 		- User Movement 
+Left Shift 	- Raise Position
+Left Strg 	- Lower Position
+
+## Heatmap 
+
+V - Start/Stop tracking
+B - Lower smoothvalue  
+N - Raise smoothvalue
+M - Hide/Show Heatmap
+
+## Gaze-mapper
+
+F - Start/Stop tracking
+G - Lower threshold value
+H - Raise threshold value
+J - Hide/show grid
+T - switch view (inverted view)
