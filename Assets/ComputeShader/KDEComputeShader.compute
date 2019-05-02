@@ -1,0 +1,85 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+#pragma kernel IncVerWeight
+
+
+struct PositionStruct {
+	float3 pos;
+};
+struct WeightStruct{
+	float weight;
+};
+
+struct colorStruct {
+	float4 color;
+};
+
+
+//RWStructuredBuffer<colorStruct>_colors;
+StructuredBuffer<PositionStruct> _vertices;
+RWStructuredBuffer<WeightStruct> _weights;
+RWStructuredBuffer<WeightStruct>_output;
+
+int _arraylength;
+float _summax;
+int _vertindex;
+int _size;
+int _msize;
+float _smooth;
+
+// max threads 1024
+[numthreads(32,32,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	if (id.x <= (uint) _msize && id.y <= (uint) _msize) {
+	int idx = id.x + (id.y * _size);
+		float stemp = 0;
+		float dis = 0;
+		for (int i = 0; i < _arraylength; i++)
+		{
+			dis = distance(_vertices[idx].pos,_vertices[i].pos);	
+			
+			// Manual distance calculation
+			//dis = sqrt( pow((_vertices[idx].pos.x-_vertices[i].pos.x),2.0f)+ pow((_vertices[idx].pos.y-_vertices[i].pos.y),2.0f)+pow((_vertices[idx].pos.z-_vertices[i].pos.z),2.0f));
+				
+			//GAUSSIAN kernel with Smoothing
+			//stemp += ( (exp(-(pow(dis, 2.0f) / (2.0f * pow(_smooth, 2.0f))) ) / sqrt(2.0f * 3.14159265f * pow(_smooth, 2.0f)))*_weights[i].weight );
+
+			//GAUSSIAN kernel extned Smoothing
+			stemp += ((exp(-(pow(dis/_smooth, 2.0f) / 2.0f )) / sqrt(2.0f * 3.14159265f ))*_weights[i].weight);
+		}
+
+		// TODO: wrong normalization when use smoothing, but the result is not so bad.
+
+		// kernel shmooting
+		//stemp = stemp / _summax;
+		
+		// extend smoothing
+		stemp = stemp / (_summax*_smooth);
+
+/*
+		// "small comptueshader color gradient"
+		// Shader must be config to use this.
+
+		if (stemp > 1) {
+			_colors[idx].color = float4(1, 1, 1, 1);
+		}
+		else if (stemp > 0.3) {
+			_colors[idx].color = float4(0, 0, stemp, 1);
+		}
+		else {
+			_colors[idx].color = float4(0, stemp, 0, 1);
+		}
+*/
+
+		_output[idx].weight = stemp;
+	}
+}
+
+[numthreads(1,1,1)]
+void IncVerWeight(uint3 id : SV_DispatchThreadID)
+{
+	_weights[_vertindex].weight += 1;
+}
+
+
