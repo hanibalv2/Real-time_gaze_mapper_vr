@@ -1,5 +1,5 @@
 # Real-time_gaze_mapper_vr
-![](https://github.com/hanibalv2/Real-time_gaze_mapper_vr/blob/master/images/result_invert.PNGm)
+![](https://github.com/hanibalv2/Real-time_gaze_mapper_vr/blob/master/images/result_invert.PNG)
 
 ![](https://github.com/hanibalv2/Real-time_gaze_mapper_vr/blob/master/images/result_view.PNG)
 
