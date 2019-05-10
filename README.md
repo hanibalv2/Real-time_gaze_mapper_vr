@@ -10,9 +10,10 @@ It is also shipped with a real time heatmap to map user movement in the room.
   The application can also be used without a HMD. Just start the "TestRoomEyeTrackingLabyrinth" scene.
 
 # Setup VR 
-  1. Download pupil [hier](https://github.com/pupil-labs/pupil/releases).
-  2. Start "pupil_service.exe".
-  3. Start the calibration scene "CalibrationPupilLabsVR" in unity. 
+  1. Pupil Labs HTC Vive Binocular Add-on is required: [link](https://pupil-labs.com/store/#vr-ar)
+  2. Download pupil software [hier](https://github.com/pupil-labs/pupil/releases).
+  3. Start "pupil_service.exe".
+  4. Start the calibration scene "CalibrationPupilLabsVR" in unity and follow the callibration steps. 
 
 # Dependencies
   - ValveSoftware/SteamVR plugin for unity (include in this project) [https://github.com/ValveSoftware/steamvr_unity_plugin](https://github.com/ValveSoftware/steamvr_unity_plugin)
